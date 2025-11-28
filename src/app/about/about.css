@@ -1,0 +1,359 @@
+/* Dot Pattern Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(168, 85, 247, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    backdrop-filter: blur(16px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #00f5ff 0%, #a855f7 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glow Effect */
+.glow-effect {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+/* Sections */
+section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile-img {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    /* Adjusted to focus on face */
+    border: 4px solid rgba(168, 85, 247, 0.3);
+    margin: 0 auto 32px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 1.875rem;
+    color: #00f5ff;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    color: #d1d5db;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.contact-item:hover {
+    color: #00f5ff;
+}
+
+.intro {
+    max-width: 768px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #d1d5db;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.skill-badge {
+    padding: 12px 16px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: linear-gradient(to right, rgba(0, 245, 255, 0.2), rgba(168, 85, 247, 0.2));
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 245, 255, 0.5);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 64px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #a855f7 0%, #00f5ff 100%);
+}
+
+.timeline-item {
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -52px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #a855f7, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+}
+
+.timeline-card {
+    padding: 24px;
+    transition: transform 0.3s;
+}
+
+.timeline-card:hover {
+    transform: scale(1.05);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.timeline-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.timeline-subtitle {
+    color: #00f5ff;
+    font-weight: 600;
+}
+
+.timeline-year {
+    padding: 4px 16px;
+    background: rgba(168, 85, 247, 0.2);
+    color: #a855f7;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    padding: 32px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: linear-gradient(to bottom right, #a855f7, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    color: #00f5ff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+li {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #d1d5db;
+}
+
+.checkmark {
+    color: #00f5ff;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding: 48px;
+}
+
+.cta-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.cta-text {
+    color: #d1d5db;
+    font-size: 1.125rem;
+    margin-bottom: 32px;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.btn {
+    padding: 16px 32px;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #a855f7, #ec4899);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #00f5ff, #3b82f6);
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .timeline {
+        padding-left: 48px;
+    }
+}
+
+/* Scroll Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
