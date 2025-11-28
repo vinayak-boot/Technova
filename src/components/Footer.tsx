@@ -99,7 +99,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li>
                                 <motion.a
-                                    href="about.html"
+                                    href="about"
                                     whileHover={{ x: 8, scale: 1.05 }}
                                     className="text-gray-400 hover:text-blue-400 transition-colors text-sm block transform duration-300"
                                 >
@@ -108,7 +108,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <motion.a
-                                    href="contact.html"
+                                    href="contact"
                                     whileHover={{ x: 8, scale: 1.05 }}
                                     className="text-gray-400 hover:text-blue-400 transition-colors text-sm block transform duration-300"
                                 >
@@ -117,7 +117,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <motion.a
-                                    href="ads.html"
+                                    href="ads"
                                     whileHover={{ x: 8, scale: 1.05 }}
                                     className="text-gray-400 hover:text-blue-400 transition-colors text-sm block transform duration-300"
                                 >
@@ -126,7 +126,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <motion.a
-                                    href="privacy.html"
+                                    href="privacy"
                                     whileHover={{ x: 8, scale: 1.05 }}
                                     className="text-gray-400 hover:text-blue-400 transition-colors text-sm block transform duration-300"
                                 >
@@ -135,7 +135,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <motion.a
-                                    href="terms.html"
+                                    href="terms"
                                     whileHover={{ x: 8, scale: 1.05 }}
                                     className="text-gray-400 hover:text-blue-400 transition-colors text-sm block transform duration-300"
                                 >
