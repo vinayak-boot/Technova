@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Clock, Hash, Newspaper } from 'lucide-react';
 import { generateClientSideNews, Article } from '@/lib/news-service';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const tiltOptions = {
   reverse: false,
@@ -44,14 +46,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <a
+            <Link
               href={featured.url}
               target="_blank"
               rel="noopener noreferrer"
               className="block group relative h-[600px] rounded-3xl overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
-              <img
+              <Image
                 src={featured.image_url}
                 alt={featured.title}
                 loading="eager"
@@ -85,7 +87,7 @@ export default function Home() {
                   READ FULL STORY <ExternalLink className="ml-2 w-5 h-5" />
                 </div>
               </div>
-            </a>
+            </Link>
           </motion.div>
         </section>
 
@@ -102,7 +104,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {grid.map((item, index) => (
-              <a
+              <Link
                 key={item.id}
                 href={item.url}
                 target="_blank"
@@ -112,7 +114,7 @@ export default function Home() {
               >
                 <div className="relative h-48 overflow-hidden rounded-xl mb-4 group-hover:shadow-lg transition-shadow duration-300">
                   <div className="absolute inset-0 bg-black/20 z-10 transition-opacity duration-300 group-hover:opacity-0" />
-                  <img
+                  <Image
                     src={item.image_url}
                     alt={item.title}
                     loading="lazy"
@@ -139,7 +141,7 @@ export default function Home() {
                     <span>{new Date(item.published_at).toLocaleDateString()}</span>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
