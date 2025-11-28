@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cpu, Code, Coins, Home, Info, Mail, Gamepad2, Rocket, Smartphone, Lock } from 'lucide-react';
-import { Tilt } from 'react-tilt';
 
 const menuItems = [
     { name: 'Home', icon: Home, href: 'file:///D:/CODING/Tech%20News%20Website/out/index.html', gradient: 'from-blue-500 to-cyan-500' },
@@ -34,7 +33,7 @@ export default function Sidebar() {
     useEffect(() => {
         const interval = setInterval(() => {
             setGradientIndex((prev) => (prev + 1) % gradients.length);
-        }, 3000); // Change every 3 seconds
+        }, 3000);
         return () => clearInterval(interval);
     }, []);
 
@@ -77,36 +76,35 @@ export default function Sidebar() {
                                 {menuItems.map((item, index) => {
                                     const isExternal = item.href.startsWith('http') || item.href.startsWith('file');
                                     return (
-                                        <Tilt key={item.name} options={{ max: 15, scale: 1.05 }}>
-                                            <Link
-                                                href={item.href}
-                                                onClick={() => setIsOpen(false)}
-                                                className="block"
-                                                target={isExternal ? "_blank" : undefined}
-                                                rel={isExternal ? "noopener noreferrer" : undefined}
+                                        <Link
+                                            key={item.name}
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className="block"
+                                            target={isExternal ? "_blank" : undefined}
+                                            rel={isExternal ? "noopener noreferrer" : undefined}
+                                        >
+                                            <motion.div
+                                                initial={{ x: -20, opacity: 0 }}
+                                                animate={{ x: 0, opacity: 1 }}
+                                                transition={{ delay: index * 0.02, duration: 0.15 }}
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    x: 10,
+                                                    boxShadow: "0 10px 30px rgba(59, 130, 246, 0.5)"
+                                                }}
+                                                whileTap={{ scale: 0.95 }}
+                                                className={`flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:${item.gradient} border border-white/5 hover:border-white/20 transition-all duration-300 group cursor-pointer`}
                                             >
                                                 <motion.div
-                                                    initial={{ x: -20, opacity: 0 }}
-                                                    animate={{ x: 0, opacity: 1 }}
-                                                    transition={{ delay: index * 0.02, duration: 0.15 }}
-                                                    whileHover={{
-                                                        scale: 1.05,
-                                                        x: 10,
-                                                        boxShadow: "0 10px 30px rgba(59, 130, 246, 0.5)"
-                                                    }}
-                                                    whileTap={{ scale: 0.95 }}
-                                                    className={`flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:${item.gradient} border border-white/5 hover:border-white/20 transition-all duration-300 group cursor-pointer`}
+                                                    whileHover={{ rotate: 360 }}
+                                                    transition={{ duration: 0.5 }}
                                                 >
-                                                    <motion.div
-                                                        whileHover={{ rotate: 360 }}
-                                                        transition={{ duration: 0.5 }}
-                                                    >
-                                                        <item.icon className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
-                                                    </motion.div>
-                                                    <span className="text-lg font-bold text-gray-200 group-hover:text-white transition-colors">{item.name}</span>
+                                                    <item.icon className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
                                                 </motion.div>
-                                            </Link>
-                                        </Tilt>
+                                                <span className="text-lg font-bold text-gray-200 group-hover:text-white transition-colors">{item.name}</span>
+                                            </motion.div>
+                                        </Link>
                                     );
                                 })}
                             </div>

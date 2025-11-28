@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
-import { Tilt } from 'react-tilt';
 
 export default function ContactPage() {
     return (
@@ -24,29 +23,27 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Contact Info */}
                     <div className="space-y-8">
-                        <Tilt options={{ max: 10, scale: 1.02 }}>
-                            <div className="glass-panel p-8 rounded-2xl space-y-6">
-                                <div className="flex items-center space-x-4">
-                                    <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500">
-                                        <Mail className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-white font-bold">Email</h3>
-                                        <p className="text-gray-400">vinayaksoni446@gmail.com</p>
-                                    </div>
+                        <div className="glass-panel p-8 rounded-2xl space-y-6">
+                            <div className="flex items-center space-x-4">
+                                <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500">
+                                    <Mail className="w-6 h-6" />
                                 </div>
-
-                                <div className="flex items-center space-x-4">
-                                    <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
-                                        <MapPin className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-white font-bold">Location</h3>
-                                        <p className="text-gray-400">Global / Remote</p>
-                                    </div>
+                                <div>
+                                    <h3 className="text-white font-bold">Email</h3>
+                                    <p className="text-gray-400">vinayaksoni446@gmail.com</p>
                                 </div>
                             </div>
-                        </Tilt>
+
+                            <div className="flex items-center space-x-4">
+                                <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                                    <MapPin className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="text-white font-bold">Location</h3>
+                                    <p className="text-gray-400">Global / Remote</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Form */}

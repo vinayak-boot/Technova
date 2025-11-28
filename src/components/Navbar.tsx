@@ -1,19 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { Tilt } from 'react-tilt';
-
-const defaultOptions = {
-    reverse: false,
-    max: 35,
-    perspective: 1000,
-    scale: 1.1,
-    speed: 1000,
-    transition: true,
-    axis: null,
-    reset: true,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-}
 
 export default function Navbar() {
     return (
@@ -24,19 +11,17 @@ export default function Navbar() {
 
                 {/* Center TECH NOVA (Original) */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-auto">
-                    <Tilt options={defaultOptions}>
-                        <div className="group relative block cursor-default">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient bg-[length:200%_200%]"></div>
-                            <div className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center space-x-4 border border-white/10">
-                                <span className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transform-style-3d group-hover:scale-110 transition-transform duration-300 inline-block animate-gradient bg-[length:200%_200%]">
-                                    TECH NOVA
-                                </span>
-                                <span className="text-xs text-gray-400 uppercase tracking-widest border-l border-gray-700 pl-4">
-                                    Future of News
-                                </span>
-                            </div>
+                    <div className="group relative block cursor-default">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient bg-[length:200%_200%]"></div>
+                        <div className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center space-x-4 border border-white/10">
+                            <span className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 group-hover:scale-110 transition-transform duration-300 inline-block animate-gradient bg-[length:200%_200%]">
+                                TECH NOVA
+                            </span>
+                            <span className="text-xs text-gray-400 uppercase tracking-widest border-l border-gray-700 pl-4">
+                                Future of News
+                            </span>
                         </div>
-                    </Tilt>
+                    </div>
                 </div>
 
                 {/* Top Right TECH NOVA - Links to Homepage */}

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Megaphone, TrendingUp, Users } from 'lucide-react';
-import { Tilt } from 'react-tilt';
 
 export default function AdsPage() {
     return (
@@ -24,23 +23,22 @@ export default function AdsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
                     {[
                         { icon: Users, title: "Global Reach", desc: "Connect with millions of tech-savvy readers worldwide." },
-                        { icon: TrendingUp, title: "High Engagement", desc: "Our interactive 3D platform keeps users engaged longer." },
+                        { icon: TrendingUp, title: "High Engagement", desc: "Our interactive platform keeps users engaged longer." },
                         { icon: Megaphone, title: "Premium Spots", desc: "Exclusive ad placements that blend seamlessly with our design." }
                     ].map((item, i) => (
-                        <Tilt key={i} options={{ max: 15, scale: 1.05 }}>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                className="glass-panel p-8 rounded-2xl text-center h-full border-t-4 border-t-yellow-500"
-                            >
-                                <div className="w-16 h-16 mx-auto bg-yellow-500/10 rounded-full flex items-center justify-center text-yellow-500 mb-6">
-                                    <item.icon className="w-8 h-8" />
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                                <p className="text-gray-400">{item.desc}</p>
-                            </motion.div>
-                        </Tilt>
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.1 }}
+                            className="glass-panel p-8 rounded-2xl text-center h-full border-t-4 border-t-yellow-500"
+                        >
+                            <div className="w-16 h-16 mx-auto bg-yellow-500/10 rounded-full flex items-center justify-center text-yellow-500 mb-6">
+                                <item.icon className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                            <p className="text-gray-400">{item.desc}</p>
+                        </motion.div>
                     ))}
                 </div>
 
